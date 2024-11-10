@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="text-bg-dark">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a href="/" class="navbar-brand">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor"  class="bi bi-peace" viewBox="0 0 16 16" style="color: azure;">
+                <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0v6.775l4.79 4.79A7 7 0 0 0 8.5 1.018m4.084 12.273L8.5 9.207v5.775a6.97 6.97 0 0 0 4.084-1.691M7.5 14.982V9.207l-4.084 4.084A6.97 6.97 0 0 0 7.5 14.982M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"></path>
+              </svg>
+            <span class="fs-4">Snuggly Cats</span>
+        </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/snuggleboard">Snuggle board</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/myinfo">My information</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+  
+      <div class="px-4 py-5 my-5 text-center">  
+        <h1>Register here if you want to get snuggled :3</h1>
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+          <hr class="hr hr-blurry" />
+          <div class="row">
+            <!-- The form -->
+            <div class="col-md-6">
+              <form id="register-form" name="register-form" class="p-4 p-md-5 border rounded-3 bg-secondary text-white" method="post" action="/api/add">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Name:</label>
+                  <input type="text" id="username" name="username" class="form-control form-control-sm" required>
+                </div> 
+
+                <div class="form-group mb-3">
+                    <label for="color" class="form-label">Color</label>
+                    <select id="color" name="color" class="form-control">
+                        <option selected>Black</option>
+                        <option selected>White</option>
+                        <option selected>Gray (Blue)</option>
+                        <option selected>Brown</option>
+                        <option selected>Orange (Ginger)</option>
+                        <option selected>Cream</option>
+                        <option selected>Chocolate</option>
+                        <option selected>Lavender (Lilac)</option>
+                        <option selected>Cinnamon</option>
+                        <option selected>Fawn</option>
+                        <option selected>Tabby (Classic)</option>
+                        <option selected>Tabby (Mackerel)</option>
+                        <option selected>Tabby (Spotted)</option>
+                        <option selected>Tabby (Ticked)</option>
+                        <option selected>Solid</option>
+                        <option selected>Tuxedo</option>
+                        <option selected>Calico</option>
+                        <option selected>Tortoiseshell</option>
+                        <option selected>Torbie (Tortoiseshell Tabby)</option>
+                        <option selected>Pointed (Colorpoint)</option>
+                        <option selected>Lynx Point</option>
+                        <option selected>Bicolor</option>
+                        <option selected>Tricolor</option>
+                        <option selected>Smoke</option>
+                        <option selected>Shaded</option>
+                        <option selected>Shell (Chinchilla)</option>
+                        
+                    </select>
+                </div>
+
+                  <div class="form-group mb-3">
+                    <label for="breed" class="form-label">Breed</label>
+                    <select id="breed" name="breed" class="form-control">
+                        <option selected>Abyssinian</option>
+                        <option selected>American Shorthair</option>
+                        <option selected>Arabian Mau</option>
+                        <option selected>Australian Mist</option>
+                        <option selected>Bengal</option>
+                        <option selected>Bombay</option>
+                        <option selected>British Shorthair</option>
+                        <option selected>Burmese</option>
+                        <option selected>Chartreux</option>
+                        <option selected>Cornish Rex</option>
+                        <option selected>Devon Rex</option>
+                        <option selected>Egyptian Mau</option>
+                        <option selected>European Shorthair</option>
+                        <option selected>Havana Brown</option>
+                        <option selected>Japanese Bobtail</option>
+                        <option selected>Korat</option>
+                        <option selected>Manx</option>
+                        <option selected>Ocicat</option>
+                        <option selected>Oriental Shorthair</option>
+                        <option selected>Russian Blue</option>
+                        <option selected>Scottish Fold</option>
+                        <option selected>Siamese</option>
+                        <option selected>Singapura</option>
+                        <option selected>Snowshoe</option>
+                        <option selected>Sphynx</option>
+                        <option selected>Tonkinese</option>
+                        <option selected>Turkish Shorthair</option>
+                        <option selected>American Curl</option>
+                        <option selected>Balinese</option>
+                        <option selected>Birman</option>
+                        <option selected>Cymric (long-haired Manx)</option>
+                        <option selected>Himalayan</option>
+                        <option selected>Javanese</option>
+                        <option selected>Maine Coon</option>
+                        <option selected>Norwegian Forest Cat</option>
+                        <option selected>Persian</option>
+                        <option selected>Ragdoll</option>
+                        <option selected>Siberian</option>
+                        <option selected>Somali</option>
+                        <option selected>Turkish Angora</option>
+                        <option selected>Turkish Van</option>
+                        <option selected>Lykoi</option>
+                        <option selected>Munchkin</option>
+                        <option selected>Savannah</option>
+                        <option selected>Chausie</option>
+                        <option selected>Cheetoh</option>
+                        <option selected>Serengeti</option>
+                        <option selected>Toyger</option>
+                        
+                    </select>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary">
+              </form>
+            </div>
+      
+            <!-- Additional Information -->
+            <div class="col-md-6">
+              <div class="p-4 p-md-5 border rounded-3 bg-secondary text-white">
+                <h2>Here is an example of a good snuggle!</h2>
+                <img src="/images/jatsikidaloki.png" alt="jatsikidaloki" class="img-thumbnail">
+              </div>
+            </div>
+            <hr class="hr hr-blurry" />
+          </div>
+        </div>
+      </div>
+      
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

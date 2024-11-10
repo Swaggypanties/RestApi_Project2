@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<body class="text-bg-dark">
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="/" class="navbar-brand">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor"  class="bi bi-peace" viewBox="0 0 16 16" style="color: azure;">
+                    <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0v6.775l4.79 4.79A7 7 0 0 0 8.5 1.018m4.084 12.273L8.5 9.207v5.775a6.97 6.97 0 0 0 4.084-1.691M7.5 14.982V9.207l-4.084 4.084A6.97 6.97 0 0 0 7.5 14.982M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"></path>
+                  </svg>
+                <span class="fs-4">Snuggly Cats</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/snuggleboard">Snuggle board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/myinfo">My information</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="px-4 py-5 my-5 text-center">
+        <hr class="hr" />
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5 bg-secondary">
+            <h1>Edit Entry</h1>
+    <form id="register-form" name="register-form" class="p-4 p-md-5 border rounded-3 bg-secondary text-white" method="post" action="/api/update/<%= entry._id %>">
+        <input type="hidden" name="id" value="<%= entry._id %>">
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Name: </label>
+            <input type="text" id="username" name="username" class="form-control form-control-sm" value="<%= entry.username %>" required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="color" class="form-label">Color</label>
+            <select id="color" name="color" class="form-control">
+                <option <%= entry.color === 'Black' ? 'selected' : '' %>>Black</option>
+                <option <%= entry.color === 'White' ? 'selected' : '' %>>White</option>
+                <option <%= entry.color === 'Gray (Blue)' ? 'selected' : '' %>>Gray (Blue)</option>
+                <option <%= entry.color === 'Brown' ? 'selected' : '' %>>Brown</option>
+                <option <%= entry.color === 'Orange (Ginger)' ? 'selected' : '' %>>Orange (Ginger)</option>
+                <option <%= entry.color === 'Cream' ? 'selected' : '' %>>Cream</option>
+                <option <%= entry.color === 'Chocolate' ? 'selected' : '' %>>Chocolate</option>
+                <option <%= entry.color === 'Lavender (Lilac)' ? 'selected' : '' %>>Lavender (Lilac)</option>
+                <option <%= entry.color === 'Cinnamon' ? 'selected' : '' %>>Cinnamon</option>
+                <option <%= entry.color === 'Fawn' ? 'selected' : '' %>>Fawn</option>
+                <option <%= entry.color === 'Tabby (Classic)' ? 'selected' : '' %>>Tabby (Classic)</option>
+                <option <%= entry.color === 'Tabby (Mackerel)' ? 'selected' : '' %>>Tabby (Mackerel)</option>
+                <option <%= entry.color === 'Tabby (Spotted)' ? 'selected' : '' %>>Tabby (Spotted)</option>
+                <option <%= entry.color === 'Tabby (Ticked)' ? 'selected' : '' %>>Tabby (Ticked)</option>
+                <option <%= entry.color === 'Solid' ? 'selected' : '' %>>Solid</option>
+                <option <%= entry.color === 'Tuxedo' ? 'selected' : '' %>>Tuxedo</option>
+                <option <%= entry.color === 'Calico' ? 'selected' : '' %>>Calico</option>
+                <option <%= entry.color === 'Tortoiseshell' ? 'selected' : '' %>>Tortoiseshell</option>
+                <option <%= entry.color === 'Torbie (Tortoiseshell Tabby)' ? 'selected' : '' %>>Torbie (Tortoiseshell Tabby)</option>
+                <option <%= entry.color === 'Pointed (Colorpoint)' ? 'selected' : '' %>>Pointed (Colorpoint)</option>
+                <option <%= entry.color === 'Lynx Point' ? 'selected' : '' %>>Lynx Point</option>
+                <option <%= entry.color === 'Bicolor' ? 'selected' : '' %>>Bicolor</option>
+                <option <%= entry.color === 'Tricolor' ? 'selected' : '' %>>Tricolor</option>
+                <option <%= entry.color === 'Smoke' ? 'selected' : '' %>>Smoke</option>
+                <option <%= entry.color === 'Shaded' ? 'selected' : '' %>>Shaded</option>
+                <option <%= entry.color === 'Shell (Chinchilla)' ? 'selected' : '' %>>Shell (Chinchilla)</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="breed" class="form-label">Breed</label>
+            <select id="breed" name="breed" class="form-control">
+                <option <%= entry.breed === 'Abyssinian' ? 'selected' : '' %>>Abyssinian</option>
+                <option <%= entry.breed === 'American Shorthair' ? 'selected' : '' %>>American Shorthair</option>
+                <option <%= entry.breed === 'Arabian Mau' ? 'selected' : '' %>>Arabian Mau</option>
+                <option <%= entry.breed === 'Australian Mist' ? 'selected' : '' %>>Australian Mist</option>
+                <option <%= entry.breed === 'Bengal' ? 'selected' : '' %>>Bengal</option>
+                <option <%= entry.breed === 'Bombay' ? 'selected' : '' %>>Bombay</option>
+                <option <%= entry.breed === 'British Shorthair' ? 'selected' : '' %>>British Shorthair</option>
+                <option <%= entry.breed === 'Burmese' ? 'selected' : '' %>>Burmese</option>
+                <option <%= entry.breed === 'Chartreux' ? 'selected' : '' %>>Chartreux</option>
+                <option <%= entry.breed === 'Cornish Rex' ? 'selected' : '' %>>Cornish Rex</option>
+                <option <%= entry.breed === 'Devon Rex' ? 'selected' : '' %>>Devon Rex</option>
+                <option <%= entry.breed === 'Egyptian Mau' ? 'selected' : '' %>>Egyptian Mau</option>
+                <option <%= entry.breed === 'European Shorthair' ? 'selected' : '' %>>European Shorthair</option>
+                <option <%= entry.breed === 'Havana Brown' ? 'selected' : '' %>>Havana Brown</option>
+                <option <%= entry.breed === 'Japanese Bobtail' ? 'selected' : '' %>>Japanese Bobtail</option>
+                <option <%= entry.breed === 'Korat' ? 'selected' : '' %>>Korat</option>
+                <option <%= entry.breed === 'Manx' ? 'selected' : '' %>>Manx</option>
+                <option <%= entry.breed === 'Ocicat' ? 'selected' : '' %>>Ocicat</option>
+                <option <%= entry.breed === 'Oriental Shorthair' ? 'selected' : '' %>>Oriental Shorthair</option>
+                <option <%= entry.breed === 'Russian Blue' ? 'selected' : '' %>>Russian Blue</option>
+                <option <%= entry.breed === 'Scottish Fold' ? 'selected' : '' %>>Scottish Fold</option>
+                <option <%= entry.breed === 'Siamese' ? 'selected' : '' %>>Siamese</option>
+                <option <%= entry.breed === 'Singapura' ? 'selected' : '' %>>Singapura</option>
+                <option <%= entry.breed === 'Snowshoe' ? 'selected' : '' %>>Snowshoe</option>
+                <option <%= entry.breed === 'Sphynx' ? 'selected' : '' %>>Sphynx</option>
+                <option <%= entry.breed === 'Tonkinese' ? 'selected' : '' %>>Tonkinese</option>
+                <option <%= entry.breed === 'Turkish Shorthair' ? 'selected' : '' %>>Turkish Shorthair</option>
+                <option <%= entry.breed === 'American Curl' ? 'selected' : '' %>>American Curl</option>
+                <option <%= entry.breed === 'Balinese' ? 'selected' : '' %>>Balinese</option>
+                <option <%= entry.breed === 'Birman' ? 'selected' : '' %>>Birman</option>
+                <option <%= entry.breed === 'Cymric (long-haired Manx)' ? 'selected' : '' %>>Cymric (long-haired Manx)</option>
+                <option <%= entry.breed === 'Himalayan' ? 'selected' : '' %>>Himalayan</option>
+                <option <%= entry.breed === 'Javanese' ? 'selected' : '' %>>Javanese</option>
+                <option <%= entry.breed === 'Maine Coon' ? 'selected' : '' %>>Maine Coon</option>
+                <option <%= entry.breed === 'Norwegian Forest Cat' ? 'selected' : '' %>>Norwegian Forest Cat</option>
+                <option <%= entry.breed === 'Persian' ? 'selected' : '' %>>Persian</option>
+                <option <%= entry.breed === 'Ragdoll' ? 'selected' : '' %>>Ragdoll</option>
+                <option <%= entry.breed === 'Siberian' ? 'selected' : '' %>>Siberian</option>
+                <option <%= entry.breed === 'Somali' ? 'selected' : '' %>>Somali</option>
+                <option <%= entry.breed === 'Turkish Angora' ? 'selected' : '' %>>Turkish Angora</option>
+                <option <%= entry.breed === 'Turkish Van' ? 'selected' : '' %>>Turkish Van</option>
+                <option <%= entry.breed === 'Lykoi' ? 'selected' : '' %>>Lykoi</option>
+                <option <%= entry.breed === 'Munchkin' ? 'selected' : '' %>>Munchkin</option>
+                <option <%= entry.breed === 'Savannah' ? 'selected' : '' %>>Savannah</option>
+                <option <%= entry.breed === 'Chausie' ? 'selected' : '' %>>Chausie</option>
+                <option <%= entry.breed === 'Cheetoh' ? 'selected' : '' %>>Cheetoh</option>
+                <option <%= entry.breed === 'Serengeti' ? 'selected' : '' %>>Serengeti</option>
+                <option <%= entry.breed === 'Toyger' ? 'selected' : '' %>>Toyger</option>
+            </select>
+        </div>
+
+        <button type="submit" value="Submit" class="btn btn-primary">Update Entry</button>
+    </form>
+
+    <form method="post" action="/api/delete/<%= entry._id %>">
+        <button type="submit" class="btn btn-danger mt-3">Delete Entry</button>
+    </form>
+            
+
+
+            <div id="spacer" class="d-flex" style="height: 100px;">
+                <div class="vr bg-secondary"></div>
+            </div>
+        
+                
+            </div>
+        </div>
+    </div>
+    <hr class="hr" />
+</body>
+</html>
