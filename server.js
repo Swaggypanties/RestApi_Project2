@@ -101,7 +101,7 @@ app.get('/api/:id', async (req, res) => {
 });
 
 //This updates the data related to the id
-app.patch('/api/update/:id', async (req, res) => {
+app.post('/api/update/:id', async (req, res) => {
     const client = new MongoClient(uri);
     const id = req.params.id;
     const updatedData = {
@@ -133,7 +133,7 @@ app.patch('/api/update/:id', async (req, res) => {
 });
 
 //This deletes the entry
-app.delete("/api/delete/:id", async (req, res) => {
+app.post('/api/delete/:id', async (req, res) => {
     const client = new MongoClient(uri);
     const id = req.params.id;
 
@@ -182,6 +182,7 @@ app.get('/success', (req, res) => {
 });
 //Route for the success page when done editing
 app.get('/success_edit', (req, res) => {
+    const id = req.query.id;
     res.render('success_edit', { id: id });
 });
 //Route for the success page when done deleting
