@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 require("dotenv").config();
 //App initialization
@@ -141,7 +141,7 @@ app.post('/api/delete/:id', async (req, res) => {
         await client.connect();
         const collection = client.db("sample_mflix").collection("snuggle board");
 
-        const result = await collection.deleteOne({ _id: new mongoose.Types.ObjectId(id) });
+        const result = await collection.deleteOne({ _id: new ObjectId(id) });
 
         if (result.deletedCount === 1) {
             res.redirect('/success_delete'); // Redirect to the delete page after deletion
